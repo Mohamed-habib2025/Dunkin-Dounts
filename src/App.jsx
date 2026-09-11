@@ -16,9 +16,6 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  {
-    basename: "/Dunkin-Dounts",
-  }
 );
 
 export default function App() {

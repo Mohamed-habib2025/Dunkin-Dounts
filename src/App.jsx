@@ -4,17 +4,22 @@ import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import About from "./pages/About";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <MainLayout />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: "menu", element: <Menu /> },
+        { path: "about", element: <About /> },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <MainLayout />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: "menu", element: <Menu /> },
-      { path: "about", element: <About /> },
-    ],
-  },
-]);
+    basename: "/Dunkin-Dounts",
+  }
+);
 
 export default function App() {
   return <RouterProvider router={router} />;
